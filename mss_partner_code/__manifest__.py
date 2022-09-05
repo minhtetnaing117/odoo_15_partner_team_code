@@ -1,0 +1,21 @@
+{
+    'name': 'Partner CODE',
+    'version': '15.0.0.0',
+    'summary': 'Partner CODE',
+    'description': 'Add Partner CODE, and make it available to search with',
+    'category': '',
+    'author': '',
+    'website': '',
+    'license': '',
+    'depends': ['base','mss_sale_order_extension','sale'],
+    'data': [
+        'data/data.xml',
+        'views/res_partner_view.xml',
+        'views/outlet_type_view.xml',
+        'views/city_team.xml',
+        'views/sale_order.xml',
+        'security/ir.model.access.csv',
+    ],
+    'installable': True,
+    'auto_install': False,
+}

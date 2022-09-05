@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+      <record id="view_order_form_inherit_mss_sr_team_extension" model="ir.ui.view">
+          <field name="name">sale.order.mss.sr.team.extension</field>
+          <field name="model">sale.order</field>
+          <field name="inherit_id" ref="sale.view_order_form"/>
+          <field name="arch" type="xml">
+              <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="parent_partner"/>
+              </xpath>
+              <xpath expr="//sheet//group//group[2]//field[@name='validity_date']" position="after">
+                <field name="city_name_id"/>
+                <field name="normal_code_id"/>
+                <field name="partner_code_id"/>
+              </xpath>
+          </field>
+      </record>
+
+    </data>
+</odoo>

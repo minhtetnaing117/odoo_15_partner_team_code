@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_sequence_mss_normal_code" model="ir.sequence">
+            <field name="name">MSS Normal Code</field>
+            <field name="code">res.partner.normal</field>
+            <field name="prefix"></field>
+            <field name="padding">6</field>
+        </record>
+    </data>
+</odoo>

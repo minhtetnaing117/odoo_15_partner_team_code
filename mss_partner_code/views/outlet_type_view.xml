@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="outlet_type_form" model="ir.ui.view">
+            <field name="name">outlet.type.form</field>
+            <field name="model">outlet.type</field>
+            <field name="arch" type="xml">
+                <form string="Partner SR Team Code">
+                    <sheet>
+                        <group name="outlet">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="outlet_type_tree" model="ir.ui.view">
+            <field name="name">outlet.type.tree</field>
+            <field name="model">outlet.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_outlet_type" model="ir.actions.act_window">
+            <field name="name">Outlet Type</field>
+            <field name="res_model">outlet.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crete new outlet type.</p>
+            </field>
+        </record>
+
+        <menuitem
+            action="action_outlet_type"
+            id="menu_outlet_type"
+            parent="contacts.res_partner_menu_config"
+            name='Outlet Type'
+            sequence="1"
+        />
+
+    </data>
+</odoo>

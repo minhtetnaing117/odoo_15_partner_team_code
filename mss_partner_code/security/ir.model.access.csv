@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_city_team,res_partner_city_team,model_city_team,base.group_user,1,1,1,1
+access_outlet_type,res_partner_outlet_type,model_outlet_type,base.group_user,1,1,1,1

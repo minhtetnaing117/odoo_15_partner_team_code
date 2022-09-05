@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--   Inherit form view     -->
+        <record id="inherit_partner_form_extension" model="ir.ui.view">
+            <field name="name">Inherit Partner Form Extension</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="outlet_gp" string="Outlet Group" attrs='{"invisible": [("is_partner", "=", True)]}'/>
+                    <field name="outlet_type" string="Outlet Type" attrs='{"invisible": [("is_partner", "=", True)]}'/>
+                    <field name="normal_code_id" string="Customer Code" attrs='{"invisible": [("is_partner", "=", True)]}'/>
+                    <field name="partner_code_id" string="Partner Code" attrs='{"invisible": [("is_partner", "=", False)]}'/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="parent_partner" attrs='{"invisible": [("is_partner", "=", True)]}' domain="[('is_partner', '=', True)]"/>
+                    <field name="show_is_partner" attrs='{"invisible" : True}'/>
+                    <field name="is_partner" attrs='{"invisible": [("show_is_partner", "=", True)]}'/>
+                    <field name="latest_code" attrs='{"invisible" : True}'/>
+                </xpath>
+            </field>
+        </record>
+
+         <record id="inherit_city_group_extension" model="ir.ui.view">
+            <field name="name">Inherit City Group Form Extension</field>
+            <field name="model">res.partner.city.group</field>
+            <field name="inherit_id" ref="mss_sale_order_extension.city_group_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <div class="oe_title">
+                        <label for="partner_code" class="oe_edit_only"/>
+                        <field name="partner_code" string="SR Team Codes" />
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="city_group_tree" model="ir.ui.view">
+        <field name="name">city.group.tree</field>
+        <field name="model">res.partner.city.group</field>
+        <field name="arch" type="xml">
+          <tree string="City Tags">
+            <field name="name"/>
+            <field name="partner_code"/>
+          </tree>
+        </field>
+      </record>
+       
+    </data>
+</odoo>
